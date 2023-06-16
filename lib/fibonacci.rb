@@ -1,5 +1,4 @@
 def fibs(max_count)
-  # [0, 1, 1, 2, 3, 5, 8, 13]
   fib = []
   (0..max_count - 1).each do |num|
     if [0, 1].include?(num)
