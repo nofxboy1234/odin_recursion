@@ -10,8 +10,16 @@ def fibs(max_count)
   fib
 end
 
-def fib_value(n, count = 0, current_next = [0, 1])
+def fibs_rec(n, count = 0, current_next = [0, 1])
   return current_next[0] if n == count
 
-  fib_value(n, count + 1, [current_next[1], current_next[0] + current_next[1]])
+  fibs_rec(n, count + 1, [current_next[1], current_next[0] + current_next[1]])
 end
+
+
+def fibs_value_at(n, count = 0, current_next = [0, 1])
+  return current_next[0] if n == count
+
+  fibs_value_at(n, count + 1, [current_next[1], current_next[0] + current_next[1]])
+end
+
