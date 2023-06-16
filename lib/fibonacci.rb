@@ -1,0 +1,3 @@
+def fibs(count)
+  
+end
