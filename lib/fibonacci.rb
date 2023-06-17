@@ -10,12 +10,16 @@ def fibs(max_count)
   fib
 end
 
-def fibs_rec(n)
-  # base case: when
+def fibs_rec(max_count)
+  if max_count.zero?
+    puts 'Not a valid count of fibonacci numbers'
+    return
+  end
+  # base case: when max_count is 1 or 2
+  return max_count - 1 if [1, 2].include?(max_count)
 
-  return current_next[0] if n == count
-
-  fibs_rec(n, count + 1, [current_next[1], current_next[0] + current_next[1]])
+  # recursive case: when max_count is >= 3
+  fib << (fibs_rec(max_index - 2) + fibs_rec(max_index - 1))
 end
 
 def fibs_value_at(n, count = 0, current_next = [0, 1])
