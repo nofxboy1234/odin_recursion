@@ -16,10 +16,16 @@ def fibs_rec(max_count)
     return
   end
   # base case: when max_count is 1 or 2
-  return max_count - 1 if [1, 2].include?(max_count)
-
-  # recursive case: when max_count is >= 3
-  fib << (fibs_rec(max_index - 2) + fibs_rec(max_index - 1))
+  case max_count
+  when 1
+    return [0]
+  when 2
+    return [0, 1]
+  else
+    # recursive case: when max_count is >= 3
+    fib = fibs_rec(max_count - 2)
+    fib << fibs_rec(max_count - 1)
+  end
 end
 
 def fibs_value_at(n, count = 0, current_next = [0, 1])
