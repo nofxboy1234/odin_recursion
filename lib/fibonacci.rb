@@ -1,3 +1,5 @@
+require 'pry-byebug'
+
 def fibs(max_count)
   fib = []
   (0..max_count - 1).each do |num|
@@ -18,13 +20,14 @@ def fibs_rec(max_count)
   # base case: when max_count is 1 or 2
   case max_count
   when 1
-    return [0]
+    [0]
   when 2
-    return [0, 1]
+    [0, 1]
   else
     # recursive case: when max_count is >= 3
-    fib = fibs_rec(max_count - 2)
-    fib << fibs_rec(max_count - 1)
+    # binding.pry
+    fib = fibs_rec(max_count - 2).sum
+    fib << fibs_rec(max_count - 1).sum
   end
 end
 
