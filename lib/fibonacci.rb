@@ -34,7 +34,7 @@ def fibs_rec(max_count)
   case max_count
   when 0
     puts 'Not a valid count of fibonacci numbers'
-    return
+    nil
   when 1
     [0]
   when 2
@@ -45,6 +45,5 @@ def fibs_rec(max_count)
     fib << fib[-2] + fib[-1]
   end
 end
-
 
 # fibs_rec(3)
