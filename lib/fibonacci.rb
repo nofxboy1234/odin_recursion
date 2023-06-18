@@ -46,4 +46,4 @@ def fibs_rec(max_count)
   end
 end
 
-# fibs_rec(3)
+# p fibs_rec(4)
