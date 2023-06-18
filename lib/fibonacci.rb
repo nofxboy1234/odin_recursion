@@ -13,21 +13,18 @@ def fibs(max_count)
 end
 
 def fibs_rec(max_count)
-  if max_count.zero?
+  # binding.pry
+  case max_count
+  when 0
     puts 'Not a valid count of fibonacci numbers'
     return
-  end
-  # base case: when max_count is 1 or 2
-  case max_count
   when 1
     [0]
   when 2
     [0, 1]
   else
     # recursive case: when max_count is >= 3
-    # binding.pry
-    fib = fibs_rec(max_count - 2).sum
-    fib << fibs_rec(max_count - 1).sum
+    fibs_rec(max_count - 2) << fibs_rec(max_count - 1).sum
   end
 end
 

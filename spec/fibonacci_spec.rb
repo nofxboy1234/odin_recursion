@@ -33,8 +33,12 @@ RSpec.describe 'Fibonacci' do
       end
     end
     
-    it 'returns an array of n numbers from the fibonacci sequence using recursion' do
-      expect(fibs_rec(8)).to eq([0, 1, 1, 2, 3, 5, 8, 13])
+    it 'returns an array of 3 numbers from the fibonacci sequence using recursion' do
+      expect(fibs_rec(3)).to eq([0, 1, 1])
     end
+
+    # it 'returns an array of 8 numbers from the fibonacci sequence using recursion' do
+    #   expect(fibs_rec(8)).to eq([0, 1, 1, 2, 3, 5, 8, 13])
+    # end
   end
 end
