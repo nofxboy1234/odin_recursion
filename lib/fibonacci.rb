@@ -24,8 +24,8 @@ def fibs_rec(max_count)
     [0, 1]
   else
     # recursive case: when max_count is >= 3
-    two_numbers_before = fibs_rec(max_count - 2).union(fibs_rec(max_count - 1))
-    two_numbers_before << two_numbers_before.sum
+    fib = fibs_rec(max_count - 1)
+    fib << fib[-2] + fib[-1]
   end
 end
 
