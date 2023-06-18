@@ -4,8 +4,8 @@ def fib_value_at_index(num)
   if [0, 1].include?(num)
     num
   else
-    two_before_num = fib_value_at_index(num - 2, tabs + 2)
-    one_before_num = fib_value_at_index(num - 1, tabs + 2)
+    two_before_num = fib_value_at_index(num - 2)
+    one_before_num = fib_value_at_index(num - 1)
 
     two_before_num + one_before_num
   end
