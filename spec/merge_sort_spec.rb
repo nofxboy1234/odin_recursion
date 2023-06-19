@@ -61,5 +61,12 @@ RSpec.describe 'MergeSort' do
         expect(merge_sort([8, 7, 6, 5, 4, 3, 2, 1])).to eq([1, 2, 3, 4, 5, 6, 7, 8])
       end
     end
+
+    context 'when the array has a large number of elements' do
+      it 'returns a sorted array' do
+        expect(merge_sort((1..64).to_a.shuffle)).to eq((1..64).to_a)
+      end
+    end
+
   end
 end
