@@ -1,7 +1,4 @@
-require 'pry-byebug'
-
 def merge_sort(array)
-  # binding.pry
   if array.length < 2
     array
   else
@@ -26,5 +23,3 @@ def merge_sort(array)
     end
   end
 end
-
-# got: [1, 2, 3, 5]
