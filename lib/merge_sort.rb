@@ -26,8 +26,3 @@ def merge_sort(array)
     end
   end
 end
-
-# p merge_sort([4, 8, 6, 2, 1, 7, 5, 3])
-# p merge_sort([2, 4, 6, 8, 1, 7, 5, 3])
-
-# p merge_sort([1, 2, 3, 4, 5, 6, 7, 8])
