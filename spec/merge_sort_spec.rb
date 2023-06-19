@@ -68,5 +68,17 @@ RSpec.describe 'MergeSort' do
       end
     end
 
+    context 'when the array has 2 of the same number' do
+      it 'returns a sorted array' do
+        expect(merge_sort([4, 4, 6, 2, 1, 7, 5, 3])).to eq([1, 2, 3, 4, 4, 5, 6, 7])
+      end
+    end
+
+    context 'when the array is all the same number' do
+      it 'returns the same array' do
+        expect(merge_sort([4, 4, 4, 4, 4, 4, 4, 4])).to eq([4, 4, 4, 4, 4, 4, 4, 4])
+      end
+    end
+
   end
 end
