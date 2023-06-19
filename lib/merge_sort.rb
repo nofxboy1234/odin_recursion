@@ -20,9 +20,11 @@ def merge_sort(array)
     end
 
     if left_half.empty?
-      sorted_array << right_half.shift
+      sorted_array + right_half
     elsif right_half.empty?
-      sorted_array << left_half.shift
+      sorted_array + left_half
     end
   end
 end
+
+# got: [1, 2, 3, 5]
