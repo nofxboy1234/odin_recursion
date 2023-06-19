@@ -1,5 +1,3 @@
-require 'pry-byebug'
-
 def fib_value_at_index(num)
   if [0, 1].include?(num)
     num
@@ -41,7 +39,6 @@ def fibs_rec(max_count)
   when 2
     [0, 1]
   else
-    # recursive case: when max_count is >= 3
     fib = fibs_rec(max_count - 1)
     fib << fib[-2] + fib[-1]
   end
@@ -54,7 +51,3 @@ def fib_value_at_index3(number)
     fib_value_at_index3(number - 1) + fib_value_at_index3(number - 2)
   end
 end
-
-[0, 1, 1, 2, 3, 5, 8, 13]
-p fib_value_at_index3(2)
-p fib_value_at_index3(6)
