@@ -18,6 +18,7 @@ def fib_value_at_index2(n, count = 0, current_next = [0, 1])
   fib_value_at_index2(n, count + 1, [current_next[1], sum_value])
 end
 
+
 def fibs(max_count)
   fib = []
   (0..max_count - 1).each do |num|
@@ -26,8 +27,8 @@ def fibs(max_count)
            else
              [fib[-2], fib[-1]].sum
            end
-  end
-  fib
+          end
+          fib
 end
 
 def fibs_rec(max_count)
@@ -46,3 +47,14 @@ def fibs_rec(max_count)
   end
 end
 
+def fib_value_at_index3(number)
+  if number < 2
+    number
+  else
+    fib_value_at_index3(number - 1) + fib_value_at_index3(number - 2)
+  end
+end
+
+[0, 1, 1, 2, 3, 5, 8, 13]
+p fib_value_at_index3(2)
+p fib_value_at_index3(6)
