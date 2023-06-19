@@ -14,7 +14,8 @@ end
 def fib_value_at_index2(n, count = 0, current_next = [0, 1])
   return current_next[0] if n == count
 
-  fib_value_at_index(n, count + 1, [current_next[1], current_next[0] + current_next[1]])
+  sum_value = current_next[0] + current_next[1]
+  fib_value_at_index2(n, count + 1, [current_next[1], sum_value])
 end
 
 def fibs(max_count)
@@ -30,7 +31,6 @@ def fibs(max_count)
 end
 
 def fibs_rec(max_count)
-  # binding.pry
   case max_count
   when 0
     puts 'Not a valid count of fibonacci numbers'
@@ -46,4 +46,3 @@ def fibs_rec(max_count)
   end
 end
 
-# p fibs_rec(4)
