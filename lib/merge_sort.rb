@@ -1,14 +1,30 @@
+require 'pry-byebug'
+
 def merge_sort(array)
-  # on input of n elements
-  n = array.length
-  if n < 2
+  # binding.pry
+  if array.length < 2
     array
   else
-    # sort left half of elements
-    # sort right half of elements
-    # merge sorted halves
+    left_half = merge_sort(array[0, array.length / 2])
+    right_half = merge_sort(array[(array.length / 2), array.length / 2])
+
+    sorted_array = []
+    while left_half.length.positive? && right_half.length.positive?
+      sorted_array << if left_half.first < right_half.first
+                        left_half.shift
+                      elsif right_half.first < left_half.first
+                        right_half.shift
+                      else
+                        left_half.shift
+                      end
+    end
+
+    if left_half.empty?
+      sorted_array << right_half.shift
+    elsif right_half.empty?
+      sorted_array << left_half.shift
+    end
   end
-  # [1, 2, 3, 4, 5, 6, 7, 8]
 end
 
 # array = [4, 8, 6, 2, 1, 7, 5, 3]
